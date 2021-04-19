@@ -1,6 +1,4 @@
-extends KinematicBody2D
-
-var gravetat = 9.8
+extends Sprite
 
 
 # Declare member variables here. Examples:
@@ -15,6 +13,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	
+	if Input.get_action_strength("Space"):
+		get_tree().change_scene("res://desenvolupament.tscn")
 
