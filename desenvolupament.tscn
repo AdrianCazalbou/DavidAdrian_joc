@@ -1,3 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://foto nubes con empaque.jpg" type="Texture" id=1]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="foto nubes con empaque" type="Sprite" parent="."]
+position = Vector2( 536.642, 355.661 )
+scale = Vector2( 2.71491, 2.10512 )
+texture = ExtResource( 1 )
