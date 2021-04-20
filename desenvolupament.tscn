@@ -1,17 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://foto nubes con empaque.jpg" type="Texture" id=1]
-[ext_resource path="res://doraemon.png" type="Texture" id=2]
+[ext_resource path="res://dorimon1.png" type="Texture" id=2]
 [ext_resource path="res://dorimon.gd" type="Script" id=3]
+[ext_resource path="res://dorimon2.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 324.658
-height = 206.694
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "dreta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "esquerra",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 192.138, 298.713 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="foto nubes con empaque" type="Sprite" parent="."]
-position = Vector2( 536.642, 355.661 )
+position = Vector2( 474.532, 366.013 )
 scale = Vector2( 2.71491, 2.10512 )
 texture = ExtResource( 1 )
 
@@ -20,9 +33,12 @@ position = Vector2( 466.42, 431.202 )
 scale = Vector2( 0.217397, 0.196732 )
 script = ExtResource( 3 )
 
-[node name="doraemon" type="Sprite" parent="dorimon"]
-texture = ExtResource( 2 )
+[node name="doraemon" type="AnimatedSprite" parent="dorimon"]
+position = Vector2( -79.6458, -68.0317 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 2 )
+animation = "esquerra"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dorimon"]
-position = Vector2( 18.3994, 30.4985 )
-shape = SubResource( 1 )
+position = Vector2( -47.0796, -6.7207 )
+shape = SubResource( 3 )

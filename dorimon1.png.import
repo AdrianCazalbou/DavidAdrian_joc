@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/doraemon.png-682292c7e2b77e3a6e00df7dc4d82a1e.stex"
+path="res://.import/dorimon1.png-20486bd0fb1bd96da856a71a6cfe1ec0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://doraemon.png"
-dest_files=[ "res://.import/doraemon.png-682292c7e2b77e3a6e00df7dc4d82a1e.stex" ]
+source_file="res://dorimon1.png"
+dest_files=[ "res://.import/dorimon1.png-20486bd0fb1bd96da856a71a6cfe1ec0.stex" ]
 
 [params]
 
