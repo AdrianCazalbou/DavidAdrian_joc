@@ -5,8 +5,8 @@
 [ext_resource path="res://press space to start.gd" type="Script" id=3]
 
 [node name="foto empaque portada" type="Sprite"]
-position = Vector2( 509.597, 300.172 )
-scale = Vector2( 1.60684, 1.41289 )
+position = Vector2( 522.897, 473.068 )
+scale = Vector2( 1.68037, 2.21312 )
 texture = ExtResource( 1 )
 
 [node name="press space to start" type="Sprite" parent="."]
