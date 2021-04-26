@@ -23,5 +23,10 @@ func _process(delta):
 		$doraemon.play("dreta")
 	if velocitat.x < 0:
 		$doraemon.play("esquerra")
+	if position.x > 800:
+		position.x = int(position.x) % 800
+	if position.x < 0:
+		position.x = int(position.x) + 800
+	
 	
 
