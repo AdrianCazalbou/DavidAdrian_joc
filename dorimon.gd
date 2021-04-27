@@ -1,11 +1,9 @@
 extends KinematicBody2D
-var velocitat = Vector2(200,0)
-var gravetat = 100
-var velocitat_max = 250
+var velocitat = Vector2(450,0)
+var gravetat = 300
+var velocitat_max = 500
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,9 +13,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocitat = Vector2.ZERO
+	velocitat.x = 0
 	velocitat.x = Input.get_action_strength("dreta")- Input.get_action_strength("esquerra")
-	velocitat = move_and_slide(velocitat * velocitat_max)
+	velocitat.x *= velocitat_max
+	velocitat.y += gravetat * delta
+	velocitat = move_and_slide(velocitat)
 	
 	if velocitat.x > 0:
 		$doraemon.play("dreta")
