@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://foto nubes con empaque.jpg" type="Texture" id=1]
 [ext_resource path="res://dorimon1.png" type="Texture" id=2]
 [ext_resource path="res://dorimon.gd" type="Script" id=3]
 [ext_resource path="res://dorimon2.png" type="Texture" id=4]
 [ext_resource path="res://jumperpack_kenney/PNG/Environment/ground_grass.png" type="Texture" id=5]
+[ext_resource path="res://desenvolupament.gd" type="Script" id=6]
+[ext_resource path="res://Plataforma.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 164.494, 43.561 )
@@ -22,17 +24,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 188.6, 12.6506 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 178.648, 298.713 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
+escena_plataforma = ExtResource( 7 )
 
 [node name="foto nubes con empaque" type="Sprite" parent="."]
 light_mask = 2
-position = Vector2( 471.357, 359.663 )
+position = Vector2( 474.565, 356.455 )
 scale = Vector2( 2.71491, 2.10512 )
 texture = ExtResource( 1 )
 
@@ -61,6 +65,10 @@ scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "esquerra"
 
+[node name="Camera2D" type="Camera2D" parent="dorimon"]
+position = Vector2( -323.944, 230.925 )
+scale = Vector2( 1, 1 )
+
 [node name="Area2D" type="Area2D" parent="dorimon"]
 linear_damp = 1.031
 collision_layer = 2
@@ -68,9 +76,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dorimon/Area2D"]
 position = Vector2( -8.39966, 290.669 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dorimon"]
-position = Vector2( -23.9688, -23.1194 )
-shape = SubResource( 3 )
+position = Vector2( -28.3442, -19.157 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="dorimon/Area2D" to="dorimon" method="_on_Area2D_body_entered"]
