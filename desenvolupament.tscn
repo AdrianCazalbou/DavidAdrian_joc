@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://foto nubes con empaque.jpg" type="Texture" id=1]
 [ext_resource path="res://dorimon1.png" type="Texture" id=2]
@@ -13,14 +13,14 @@ extents = Vector2( 164.494, 43.561 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "dreta",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "esquerra",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "dreta",
 "speed": 5.0
 } ]
 
@@ -30,55 +30,69 @@ extents = Vector2( 188.6, 12.6506 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 178.648, 298.713 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 638.002, 10 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 6 )
 escena_plataforma = ExtResource( 7 )
 
-[node name="foto nubes con empaque" type="Sprite" parent="."]
-light_mask = 2
-position = Vector2( 474.565, 356.455 )
-scale = Vector2( 2.71491, 2.10512 )
-texture = ExtResource( 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="suelo" type="StaticBody2D" parent="."]
 position = Vector2( 412.289, 940.467 )
 scale = Vector2( 2.70441, 1.33277 )
 collision_layer = 3
 collision_mask = 3
 
-[node name="ground_grass" type="Sprite" parent="StaticBody2D"]
+[node name="ground_grass" type="Sprite" parent="suelo"]
 position = Vector2( 0, -10.9783 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
 position = Vector2( 0, -10.9783 )
 shape = SubResource( 1 )
 
 [node name="dorimon" type="KinematicBody2D" parent="."]
-position = Vector2( 466.42, 431.202 )
+position = Vector2( 452.576, 439.854 )
 scale = Vector2( 0.217397, 0.196732 )
 script = ExtResource( 3 )
 
 [node name="doraemon" type="AnimatedSprite" parent="dorimon"]
-position = Vector2( -57.7651, -68.0315 )
+position = Vector2( -10.006, 11.1326 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "esquerra"
 
-[node name="Camera2D" type="Camera2D" parent="dorimon"]
-position = Vector2( -323.944, 230.925 )
-scale = Vector2( 1, 1 )
-
 [node name="Area2D" type="Area2D" parent="dorimon"]
+position = Vector2( 71.6387, 193.512 )
 linear_damp = 1.031
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dorimon/Area2D"]
-position = Vector2( -8.39966, 290.669 )
+position = Vector2( -24.3192, 167.525 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dorimon"]
-position = Vector2( -28.3442, -19.157 )
+position = Vector2( 27.375, 42.415 )
 shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="dorimon"]
+position = Vector2( -234.418, 184.962 )
+limit_left = 0
+limit_right = 800
+
+[node name="fondo" type="KinematicBody2D" parent="."]
+show_behind_parent = true
+position = Vector2( 410.567, 469.483 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fondo"]
+position = Vector2( 411.992, 958.862 )
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="fondo"]
+show_behind_parent = true
+position = Vector2( 819.235, -21.2645 )
+scale = Vector2( 2.48706, 2.1474 )
+texture = ExtResource( 1 )
 [connection signal="body_entered" from="dorimon/Area2D" to="dorimon" method="_on_Area2D_body_entered"]
