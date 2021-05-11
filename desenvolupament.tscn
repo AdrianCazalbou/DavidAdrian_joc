@@ -92,7 +92,7 @@ shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="fondo"]
 show_behind_parent = true
-position = Vector2( 819.235, -21.2645 )
-scale = Vector2( 2.48706, 2.1474 )
+position = Vector2( -9.39584, 5.16647 )
+scale = Vector2( 1.71039, 1.5972 )
 texture = ExtResource( 1 )
 [connection signal="body_entered" from="dorimon/Area2D" to="dorimon" method="_on_Area2D_body_entered"]
