@@ -8,9 +8,9 @@ var velocitat_max = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.Dorimon = self
-	connect("body_entered", Global.Dorimon, "_on_Area2D_body_entered")
-
+	Global.dorimon = self
+#	$Area2D.connect("body_entered", Global.dorimon, "_on_Area2D_body_entered")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,12 +29,6 @@ func _process(delta):
 	if position.x < 0:
 		position.x = int(position.x) + 800
 	
-	
-
-
-
-
-
 
 
 func _on_Area2D_body_entered(body):

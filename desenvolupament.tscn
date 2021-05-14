@@ -31,7 +31,6 @@ extents = Vector2( 188.6, 12.6506 )
 extents = Vector2( 178.648, 298.713 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 638.002, 10 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 6 )
@@ -77,22 +76,19 @@ position = Vector2( 27.375, 42.415 )
 shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="dorimon"]
-position = Vector2( -234.418, 184.962 )
+position = Vector2( 2552.31, 187.153 )
 limit_left = 0
 limit_right = 800
 
-[node name="fondo" type="KinematicBody2D" parent="."]
+[node name="cel" type="KinematicBody2D" parent="."]
 show_behind_parent = true
-position = Vector2( 410.567, 469.483 )
-scale = Vector2( 1, 1 )
+position = Vector2( 401.171, 477.616 )
+scale = Vector2( 1.72312, 1.5972 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fondo"]
-position = Vector2( 411.992, 958.862 )
-shape = SubResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="fondo"]
-show_behind_parent = true
-position = Vector2( -9.39584, 5.16647 )
-scale = Vector2( 1.71039, 1.5972 )
+[node name="Sprite" type="Sprite" parent="cel"]
 texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cel"]
+position = Vector2( 635.684, 95.5343 )
+shape = SubResource( 5 )
 [connection signal="body_entered" from="dorimon/Area2D" to="dorimon" method="_on_Area2D_body_entered"]
