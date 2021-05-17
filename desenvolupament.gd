@@ -5,11 +5,12 @@ export var escena_plataforma : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	var nova_plataforma = escena_plataforma.instance()
-	nova_plataforma.position = Vector2(rand_range(100,700), 580)
+	nova_plataforma.position = Vector2(rand_range(100,300), 580)
 	add_child(nova_plataforma)
 	var nova_plataforma2 = escena_plataforma.instance()
-	nova_plataforma2.position = Vector2(rand_range(100,700), 200)
+	nova_plataforma2.position = Vector2(rand_range(400,700), 200)
 	add_child(nova_plataforma2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
