@@ -16,4 +16,12 @@ func _ready():
 func _process(delta):
 	if $dorimon.velocitat.y < 0 and $dorimon.position.y <= $cel.position.y:
 		$cel.position.y = $dorimon.position.y
+	
+	$mort. position.y = $cel.position.y
 
+
+
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://gameover.tscn")
