@@ -1,10 +1,10 @@
 extends Node2D
-
 export var escena_plataforma : PackedScene
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	randomize()
 	var nova_plataforma = escena_plataforma.instance()
 	nova_plataforma.position = Vector2(rand_range(100,300), 580)
@@ -18,7 +18,11 @@ func _process(delta):
 	if $dorimon.velocitat.y < 0 and $dorimon.position.y <= $cel.position.y:
 		$cel.position.y = $dorimon.position.y
 	
+		
+	
 	$mort. position.y = $cel.position.y
+	
+	
 
 
 
