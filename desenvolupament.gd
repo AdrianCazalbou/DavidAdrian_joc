@@ -6,12 +6,23 @@ export var escena_plataforma : PackedScene
 func _ready():
 	
 	randomize()
+	
 	var nova_plataforma = escena_plataforma.instance()
-	nova_plataforma.position = Vector2(rand_range(100,300), 580)
+	nova_plataforma.position = Vector2(rand_range(100, 700), 200)
 	add_child(nova_plataforma)
 	var nova_plataforma2 = escena_plataforma.instance()
-	nova_plataforma2.position = Vector2(rand_range(400,700), 200)
+	nova_plataforma2.position = Vector2(rand_range(100,700), 600)
 	add_child(nova_plataforma2)
+	var nova_plataforma3 = escena_plataforma.instance()
+	nova_plataforma3.position = Vector2(rand_range(100,700), 1000)
+	add_child(nova_plataforma2)
+	var nova_plataforma4 = escena_plataforma.instance()
+	nova_plataforma4.position = Vector2(rand_range(100,700), 1400)
+	add_child(nova_plataforma2)
+	var nova_plataforma5 = escena_plataforma.instance()
+	nova_plataforma5.position = Vector2(rand_range(100,700), 1800)
+	add_child(nova_plataforma2)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,6 +32,9 @@ func _process(delta):
 		
 	
 	$mort. position.y = $cel.position.y
+	
+	
+	
 	
 	
 
