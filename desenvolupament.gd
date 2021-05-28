@@ -2,6 +2,7 @@ extends Node2D
 export var escena_plataforma : PackedScene
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -54,3 +55,5 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	get_tree().change_scene("res://gameover.tscn")
+	
+	
