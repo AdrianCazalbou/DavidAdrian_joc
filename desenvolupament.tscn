@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://foto nubes con empaque.jpg" type="Texture" id=1]
 [ext_resource path="res://dorimon1.png" type="Texture" id=2]
@@ -8,20 +8,21 @@
 [ext_resource path="res://desenvolupament.gd" type="Script" id=6]
 [ext_resource path="res://Plataforma.tscn" type="PackedScene" id=7]
 [ext_resource path="res://PAUSA.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Plataforma mes alta.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 164.494, 43.561 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "dreta",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "esquerra",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "dreta",
 "speed": 5.0
 } ]
 
@@ -120,5 +121,8 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mort"]
 position = Vector2( -415.689, 437.934 )
 shape = SubResource( 6 )
+
+[node name="P_mesalta" type="Sprite" parent="."]
+script = ExtResource( 9 )
 [connection signal="body_entered" from="dorimon/Area2D" to="dorimon" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="mort" to="." method="_on_Area2D_body_entered"]

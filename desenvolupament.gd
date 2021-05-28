@@ -22,8 +22,9 @@ func _ready():
 	var nova_plataforma5 = escena_plataforma.instance()
 	nova_plataforma5.position = Vector2(rand_range(100,700), -600)
 	add_child(nova_plataforma5)
-	
 	var p_ultima = nova_plataforma5.position.y
+	
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,12 +32,16 @@ func _process(delta):
 		$cel.position.y = $dorimon.position.y
 	$mort. position.y = $cel.position.y
 	
-	var d = p_ultima - $dorimon.position.y
+	 
+	
+	var d = $P_mesalta.position.y - $dorimon.position.y
 	
 	if d <= -800:
 		var nova_plataforma = escena_plataforma.instance()
-		nova_plataforma.position = Vector2(rand_range(100,700), p_ultima + 300)
+		nova_plataforma.position = Vector2(rand_range(100,700), $P_mesalta.position.y + 300)
 		add_child(nova_plataforma)
+		$P_mesalta.position.y = $P_mesalta.position.y - 300
+		
 	
 	
 	

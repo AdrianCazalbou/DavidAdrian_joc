@@ -1,6 +1,6 @@
 extends KinematicBody2D
 var velocitat = Vector2(450,0)
-var gravetat = 300
+var gravetat = 500
 var velocitat_max = 500
 
 
@@ -32,4 +32,4 @@ func _process(delta):
 
 
 func _on_Area2D_body_entered(suelo):
-	velocitat.y = -500
+	velocitat.y = -700
