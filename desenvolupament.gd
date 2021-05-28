@@ -8,31 +8,35 @@ func _ready():
 	randomize()
 	
 	var nova_plataforma = escena_plataforma.instance()
-	nova_plataforma.position = Vector2(rand_range(100, 700), 200)
+	nova_plataforma.position = Vector2(rand_range(100, 700), 600)
 	add_child(nova_plataforma)
 	var nova_plataforma2 = escena_plataforma.instance()
-	nova_plataforma2.position = Vector2(rand_range(100,700), 600)
+	nova_plataforma2.position = Vector2(rand_range(100,700), 300)
 	add_child(nova_plataforma2)
 	var nova_plataforma3 = escena_plataforma.instance()
-	nova_plataforma3.position = Vector2(rand_range(100,700), 1000)
-	add_child(nova_plataforma2)
+	nova_plataforma3.position = Vector2(rand_range(100,700), 0)
+	add_child(nova_plataforma3)
 	var nova_plataforma4 = escena_plataforma.instance()
-	nova_plataforma4.position = Vector2(rand_range(100,700), 1400)
-	add_child(nova_plataforma2)
+	nova_plataforma4.position = Vector2(rand_range(100,700), -300)
+	add_child(nova_plataforma4)
 	var nova_plataforma5 = escena_plataforma.instance()
-	nova_plataforma5.position = Vector2(rand_range(100,700), 1800)
-	add_child(nova_plataforma2)
+	nova_plataforma5.position = Vector2(rand_range(100,700), -600)
+	add_child(nova_plataforma5)
 	
-
+	var p_ultima = nova_plataforma5.position.y
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $dorimon.velocitat.y < 0 and $dorimon.position.y <= $cel.position.y:
 		$cel.position.y = $dorimon.position.y
-	
-		
-	
 	$mort. position.y = $cel.position.y
 	
+	var d = p_ultima - $dorimon.position.y
+	
+	if d <= -800:
+		var nova_plataforma = escena_plataforma.instance()
+		nova_plataforma.position = Vector2(rand_range(100,700), p_ultima + 300)
+		add_child(nova_plataforma)
 	
 	
 	
