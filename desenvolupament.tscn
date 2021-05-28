@@ -15,14 +15,14 @@ extents = Vector2( 164.494, 43.561 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "dreta",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "esquerra",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "dreta",
 "speed": 5.0
 } ]
 
@@ -49,7 +49,8 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="ground_grass" type="Sprite" parent="suelo"]
-position = Vector2( 0, -10.9783 )
+position = Vector2( -16.5633, 155.609 )
+scale = Vector2( 1.40934, 4.54441 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
