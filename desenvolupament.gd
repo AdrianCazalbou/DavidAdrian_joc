@@ -32,6 +32,9 @@ func _process(delta):
 		$cel.position.y = $dorimon.position.y
 	$mort. position.y = $cel.position.y
 	
+	
+
+	
 	 
 	
 	var d = $P_mesalta.position.y - $dorimon.position.y
