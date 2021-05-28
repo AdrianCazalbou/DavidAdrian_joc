@@ -13,5 +13,5 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_pressed("Space"):
+	if Input.is_action_pressed("tornar a començar"):
 		get_tree().change_scene("res://foto empaque portada.tscn")
